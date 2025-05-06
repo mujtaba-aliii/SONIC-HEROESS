@@ -1,0 +1,21 @@
+﻿  Game.cpp
+D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(28,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Source.cpp
+D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+  Generating code
+  2 of 173 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Project2.vcxproj -> D:\Semeter2\OOP\Project2\x64\Release\Project2.exe
