@@ -36,12 +36,16 @@ void PlayerCharacter::handleInput(const sf::Event& ev) {
     }
     else if (ev.type == sf::Event::KeyReleased) {
         if (ev.key.code == sf::Keyboard::Left || ev.key.code == sf::Keyboard::A) {
-            movingLeft = false;
-            if (velocityX < 0) velocityX = 0;
+            if (movingLeft) {
+                movingLeft = false;
+                if (velocityX < 0) velocityX = 0;
+            }
         }
         else if (ev.key.code == sf::Keyboard::Right || ev.key.code == sf::Keyboard::D) {
-            movingRight = false;
-            if (velocityX > 0) velocityX = 0;
+            if (movingRight) {
+                movingRight = false;
+                if (velocityX > 0) velocityX = 0;
+            }
         }
     }
     checkMovementKeys();
@@ -95,6 +99,7 @@ void PlayerCharacter::update(float dt, Level& level, int windowWidth, int window
     checkMovementKeys();
     applyMovement(dt, level);
     applyGravity(dt, level);
+    sprite.setPosition(x, y);
 
     // Pass the level width to clampPosition
     clampPosition(windowWidth, windowHeight, level.getWidth() * level.getCellSize());
@@ -104,9 +109,12 @@ void PlayerCharacter::update(float dt, Level& level, int windowWidth, int window
 
 
 
-void PlayerCharacter::render(sf::RenderWindow& w) {
-    if (texture.getSize().x > 0) w.draw(sprite);
+void PlayerCharacter::render(sf::RenderWindow& window) {
+    // 1) draw the character
+    if (texture.getSize().x > 0)
+        window.draw(sprite);
 }
+
 
 void PlayerCharacter::toggleDebug() {
     debugMode = !debugMode;

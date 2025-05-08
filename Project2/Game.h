@@ -5,8 +5,14 @@
 #include "Sonic.h"
 #include "Tails.h"
 #include "Knuckles.h"
+#include "Enemy.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include "Crab.h"
+#include "MotoBug.h"
+#include "BuzzBomber.h"
+#include "BatBrain.h"
+#include "Collectibles.h"
 
 class Game {
 public:
@@ -21,17 +27,27 @@ private:
     void switchPlayer();
     void repositionAfterSwitch(PlayerCharacter* previousLeader);
 
+
+    sf::Texture backgroundTexture;
+    sf::Sprite backgroundSprite;
     sf::RenderWindow* window;
     sf::View          view;
     Level             level;
 
+    collectibles** rings;
     Sonic* sonic;
     Tails* tails;
     Knuckles* knuckles;
     PlayerCharacter* activePlayer;
     int               activeIndex;
     bool              lastDirRight;
-
+    EnemyCharacter* enemy;
+    Crabmeat** crab;
+    MotoBug* motobug;
+    BuzzBomber* buzzbomber;
+    BatBrain* batbrain;
+    int crabCount;
+    int ringCount;
     // ─── build‑up speed cap ─────────────────────────────────────
     float currentCap;    // ramps each frame from startSpeed → targetCap
 

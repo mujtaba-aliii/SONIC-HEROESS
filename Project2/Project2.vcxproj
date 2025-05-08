@@ -133,17 +133,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Level.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Source.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="BatBrain.h" />
+    <ClInclude Include="BuzzBomber.h" />
+    <ClInclude Include="Collectibles.h" />
+    <ClInclude Include="Crab.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Knuckles.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MotoBug.h" />
+    <ClInclude Include="Options.h" />
     <ClInclude Include="PlayerCharacter.h" />
+    <ClInclude Include="Projectile.h" />
     <ClInclude Include="Sonic.h" />
     <ClInclude Include="Tails.h" />
   </ItemGroup>

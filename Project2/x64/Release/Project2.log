@@ -1,20 +1,115 @@
 ﻿  Game.cpp
+D:\Semeter2\OOP\Project2\Project2\Level.h(19,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(21,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(23,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(25,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
+  
 D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
   (compiling source file 'Game.cpp')
   
 D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
   (compiling source file 'Game.cpp')
   
-D:\Semeter2\OOP\Project2\Project2\Game.cpp(28,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Enemy.h(13,41): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Enemy.h(14,42): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(32,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(51,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(72,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(73,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(78,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(79,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(83,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(84,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Semeter2\OOP\Project2\Project2\Game.cpp(94,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Level.cpp
+D:\Semeter2\OOP\Project2\Project2\Level.h(19,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(21,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(23,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(25,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Enemy.h(13,41): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Enemy.h(14,42): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Level.cpp')
+  
+  Menu.cpp
+D:\Semeter2\OOP\Project2\Project2\Level.h(19,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(21,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(23,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(25,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Enemy.h(13,41): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Enemy.h(14,42): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Menu.cpp(39,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Source.cpp
+D:\Semeter2\OOP\Project2\Project2\Level.h(19,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(21,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(23,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Level.h(25,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Source.cpp')
+  
 D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
   (compiling source file 'Source.cpp')
   
 D:\Semeter2\OOP\Project2\Project2\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Enemy.h(13,41): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+D:\Semeter2\OOP\Project2\Project2\Enemy.h(14,42): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
   (compiling source file 'Source.cpp')
   
   Generating code
-  2 of 173 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
+  4 of 280 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

@@ -6,8 +6,6 @@ class PlayerCharacter {
 public:
     PlayerCharacter(float startX, float startY);
     virtual ~PlayerCharacter() = default;
-
-    // NEW: allow dynamic speed adjustment
     void setMaxSpeed(float ms) { maxSpeed = ms; }
 
     void setTexture(const std::string& filename);
@@ -17,7 +15,9 @@ public:
     void toggleDebug();
 
     sf::Vector2f getPosition()    const { return { x, y }; }
-    float        getVelocityX()   const { return velocityX; }
+    float getPositionX() const { return { x }; }
+    float getPositionY() const { return { y }; }
+    float getVelocityX() const { return velocityX; }
     bool         isOnGround()     const { return onGround; }
     int          getSpriteWidth() const { return spriteWidth; }
     int          getSpriteHeight()const { return spriteHeight; }
@@ -77,7 +77,7 @@ protected:
     void updateDimensions();
     void checkMovementKeys();
 
-    
+
 
 
 

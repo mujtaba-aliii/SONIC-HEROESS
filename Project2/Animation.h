@@ -68,10 +68,20 @@ public:
         if (paused || frameCount <= 1) return;
 
         elapsed += dt;
-        if (elapsed >= frameTime) {
+        while (elapsed >= frameTime) {
+            // Move to next frame
+            currentFrame = (currentFrame + 1) % frameCount;
+            if (!loop && currentFrame == 0) {
+                currentFrame = frameCount - 1;  // Stay on last frame if not looping
+                paused = true;
+                break;
+            }
+
+            // Update sprite with correct frame
+            sprite.setTextureRect(frames[currentFrame]);
+
+            // Subtract frame time to handle variable frame rates properly
             elapsed -= frameTime;
-            currentFrame = (currentFrame + 1) % frameCount; // Loop through frames
-            sprite.setTextureRect(frames[currentFrame]);   // Set the texture rectangle for the current frame
         }
     }
 
@@ -97,11 +107,11 @@ public:
             sprite.setTextureRect(frames[0]);
         }
     }
-     void setCustomFrameWidths(const int* widths, int num_frames) {
+    void setCustomFrameWidths(const int* widths, int num_frames) {
         if (num_frames > frameCount || num_frames > MAX_FRAMES) {
             num_frames = std::min(frameCount, MAX_FRAMES);
         }
-        
+
         // Reset all frames first
         for (int i = 0; i < frameCount && i < MAX_FRAMES; i++) {
             // Start position of this frame in the texture
@@ -109,13 +119,13 @@ public:
             for (int j = 0; j < i; j++) {
                 left += (j < num_frames) ? widths[j] : originalFrameW;
             }
-            
+
             // Width to use (either custom or original)
             int width = (i < num_frames) ? widths[i] : drawW;
-            
+
             frames[i] = sf::IntRect(left, 0, width, originalFrameH);
         }
-        
+
         // Reset current frame to apply new frame rect
         if (frameCount > 0) {
             sprite.setTextureRect(frames[currentFrame]);

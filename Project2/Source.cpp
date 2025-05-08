@@ -1,8 +1,8 @@
 //Source.cpp
 #include "Game.h"
-
+#include "Menu.h"
 int main() {
-    Game game(1200, 900);
-    game.run();
+    Menu menu;
+    menu.run();
     return 0;
 }

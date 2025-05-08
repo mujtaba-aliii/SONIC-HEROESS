@@ -1,9 +1,10 @@
 ﻿#include "Level.h"
+#include "Game.h"
 #include <iostream>
 #include <algorithm>
 
 Level::Level(int height, int width, int cellSize)
-    : h(height), w(width), cellSize(cellSize)
+    : h(height), w(width), cellSize(cellSize), crabCount(0)
 {
     // initialize entire grid to spaces
     for (int i = 0; i < MAX_ROWS; ++i)
@@ -20,6 +21,13 @@ Level::Level(int height, int width, int cellSize)
         std::cerr << "Error: Failed to load background.png\n";
     backgroundSprite.setTexture(backgroundTexture);
 
+    if (!crabTexture.loadFromFile("Data/crab.png"))
+        std::cerr << "Error: Failed to load crab.png\n";
+    crabSprite.setTexture(crabTexture);
+
+    if (!ringTexture.loadFromFile("Data/ring.png"))
+        std::cerr << "Error: Failed to load ring.png\n";
+    ringSprite.setTexture(ringTexture);
     // scale background to cover the whole level area
     sf::Vector2u sz = backgroundTexture.getSize();
     backgroundSprite.setScale(
@@ -31,22 +39,21 @@ Level::Level(int height, int width, int cellSize)
 void Level::initGridFromArray() {
     // *** MAKE SURE WE HAVE EXACTLY 14 ROWS HERE! ***
     static const char* layout[MAX_ROWS] = {
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "                                                                                                                                                                                                        ",
-        "            w                                                                                                                                                                                           ",
-        "            w                                                                                                                                                                                           ",
-        "            w                                      ww                                                                                                                                                   ",
-        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+        "                                                                                                                                                                                                       ",
+        "                                                                                                                                                                                                       ",
+        "                                                                                                                                                                                                       ",
+        "                                                                                                                                                                                                       ",
+        "                                                                                                                                                                                                       ",
+        "                                                                                                                                                                                                       ",
+        "                                                                                                                                                                                                       ",
+        "                                                                                                                                                                                                       ",
+        "                              r  r                                                                                                                                                                     ",
+        "                   r        wwwwwww                                                                                                                                                                    ",
+        "                wwwwww                                                                                                                                                                                 ",
+        "                                                       r                                                                                                                                               ",
+        "                    c             c       r           ww        r         c                 c                                                                                                          ",
+        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
     };
-
     int rowsToCopy = std::min(h, MAX_ROWS);
     for (int i = 0; i < rowsToCopy; ++i) {
         int len = std::min(w, int(std::strlen(layout[i])));
@@ -61,6 +68,40 @@ bool Level::collidesAt(float worldX, float worldY) const {
     int j = int(worldX) / cellSize;
     if (i < 0 || i >= h || j < 0 || j >= w) return false;
     return grid[i][j] == 'w';
+}
+
+void Level::spawnCrabs() {
+    crabCount = 0;
+    for (int i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+            if (grid[i][j] == 'c') {
+                if (crabCount < MAX_CRABS) {
+                    crabX[crabCount] = j * cellSize;
+                    crabY[crabCount] = i * cellSize;
+                    crabCount++;
+
+                }
+                grid[i][j] = ' ';
+            }
+
+        }
+    }
+}
+
+void Level::ringsPlacement() {
+    for (int i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+            if (grid[i][j] == 'r') {
+                if (ringCount < MAX_RINGS) {
+                    ringX[ringCount] = j * cellSize;
+                    ringY[ringCount] = i * cellSize;
+                    ringCount++;
+                    grid[i][j] = ' ';
+                }
+
+            }
+        }
+    }
 }
 
 void Level::render(sf::RenderWindow& window) {
