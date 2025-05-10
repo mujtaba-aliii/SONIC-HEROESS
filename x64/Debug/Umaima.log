@@ -1,0 +1,245 @@
+﻿  Game.cpp
+C:\Users\HP\Desktop\Project_Umaima\Level.h(19,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(20,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(21,41): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(22,41): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(23,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(24,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(25,42): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(26,42): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(27,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(28,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Enemy.h(55,41): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Enemy.h(56,42): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Crab.h(45,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(49,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(50,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(65,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(125,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Game.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Game.cpp(30,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\HP\Desktop\Project_Umaima\Game.cpp(49,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\HP\Desktop\Project_Umaima\Game.cpp(64,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\HP\Desktop\Project_Umaima\Game.cpp(80,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\HP\Desktop\Project_Umaima\Game.cpp(97,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\HP\Desktop\Project_Umaima\Game.cpp(119,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Level.cpp
+C:\Users\HP\Desktop\Project_Umaima\Level.h(19,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(20,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(21,41): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(22,41): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(23,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(24,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(25,42): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(26,42): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(27,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(28,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Enemy.h(55,41): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Enemy.h(56,42): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Crab.h(45,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(49,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(50,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(65,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(125,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Level.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.cpp(104,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\HP\Desktop\Project_Umaima\Level.cpp(105,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\HP\Desktop\Project_Umaima\Level.cpp(107,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\HP\Desktop\Project_Umaima\Level.cpp(108,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Menu.cpp
+C:\Users\HP\Desktop\Project_Umaima\Level.h(19,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(20,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(21,41): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(22,41): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(23,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(24,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(25,42): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(26,42): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(27,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(28,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Enemy.h(55,41): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Enemy.h(56,42): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Crab.h(45,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(49,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(50,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(65,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(125,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Menu.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Menu.cpp(38,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Source.cpp
+C:\Users\HP\Desktop\Project_Umaima\Level.h(19,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(20,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(21,41): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(22,41): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(23,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(24,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(25,42): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(26,42): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(27,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Level.h(28,43): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\PlayerCharacter.h(22,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\PlayerCharacter.h(23,50): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Enemy.h(55,41): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Enemy.h(56,42): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\Crab.h(45,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(49,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(50,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(65,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+C:\Users\HP\Desktop\Project_Umaima\BuzzBomber.h(125,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '../../Project_Umaima/Source.cpp')
+  
+  Generating Code...
+  Umaima.vcxproj -> C:\Users\HP\Desktop\Umaima\x64\Debug\Umaima.exe
