@@ -148,6 +148,7 @@
     <ClInclude Include="..\..\Project_Umaima\Sonic.h" />
     <ClInclude Include="..\..\Project_Umaima\Tails.h" />
     <ClInclude Include="Bomb.h" />
+    <ClInclude Include="Lives.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Project_Umaima\Enemy.cpp" />
