@@ -1,5 +1,4 @@
-﻿// File: Tails.h
-#pragma once
+﻿#pragma once
 
 #include "PlayerCharacter.h"
 #include "Animation.h"
@@ -10,15 +9,20 @@
 
 class Tails : public PlayerCharacter {
 public:
-    Tails(float sx, float sy)
-        : PlayerCharacter(sx, sy)
+    Tails(float sx, float sy,
+        float gravity, float terminalVel,
+        float maxSpeed, float acceleration,
+        float deceleration)
+        : PlayerCharacter(gravity,
+            terminalVel,
+            maxSpeed,
+            acceleration,
+            deceleration)
     {
-        // ─── restore base jump & placement ────────────────────────
         jumpStrength = -20.f;
         float adjustedY = sy - 36.f;
         setPosition(sx, adjustedY);
 
-        // ─── load animations ───────────────────────────────────────
         constexpr int IDLE_FW = 491, IDLE_FH = 50;
         constexpr int RUN_FW = 391, RUN_FH = 49;
         constexpr int JUMP_FW = 292, JUMP_FH = 48;
@@ -32,7 +36,6 @@ public:
         animJumpR.load("Sprites/tails_jump.png", JUMP_FW, JUMP_FH, 6, FT, CROP_X, JUMP_FW / 6);
         animJumpL.load("Sprites/tails_jumpL.png", JUMP_FW, JUMP_FH, 6, FT, CROP_X, JUMP_FW / 6);
 
-        // ─── glide (4 frames, 217×45) ─────────────────────────────
         constexpr int GLIDE_FW = 217, GLIDE_FH = 45;
         constexpr int GLIDE_FRAMES = 4;
         animGlideR.load("Sprites/tails_fly.png",
@@ -42,7 +45,6 @@ public:
             GLIDE_FW, GLIDE_FH,
             GLIDE_FRAMES, FT, CROP_X, GLIDE_FW / GLIDE_FRAMES);
 
-        // ─── custom frame widths ───────────────────────────────────
         int idleW[10] = { 49,49,49,49,49,49,49,49,49,49 };
         int runW[8] = { 49,49,49,49,49,49,49,49 };
         int jumpW[6] = { 48,48,48,48,48,48 };
@@ -57,7 +59,6 @@ public:
         animGlideR.setCustomFrameWidths(glideW, 4);
         animGlideL.setCustomFrameWidths(glideW, 4);
 
-        // ─── scale & position all sprites ─────────────────────────
         constexpr float scale = 2.5f;
         for (auto* a : { &animIdleR, &animRunR, &animJumpR,
                          &animIdleL, &animRunL, &animJumpL,
@@ -70,11 +71,9 @@ public:
         current = &animIdleR;
     }
 
-    // ─── Input: jump vs. glide ───────────────────────────────────
     void handleInput(const sf::Event& ev) override {
         if (ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Up) {
             if (onGround) {
-                // normal jump
                 gliding = false;
                 glideExpired = false;
                 glideTimerStarted = false;
@@ -82,7 +81,6 @@ public:
                 PlayerCharacter::handleInput(ev);
             }
             else if (!gliding && !glideExpired) {
-                // start glide
                 gliding = true;
                 if (!glideTimerStarted) {
                     glideClock.restart();
@@ -94,7 +92,6 @@ public:
         }
         else if (ev.type == sf::Event::KeyReleased && ev.key.code == sf::Keyboard::Up) {
             if (gliding) {
-                // stop physics glide
                 gliding = false;
             }
             PlayerCharacter::handleInput(ev);
@@ -104,17 +101,14 @@ public:
         }
     }
 
-    // ─── Update: movement, gravity, collision, animation ───────
     void update(float dt, Level& level, int windowWidth, int windowHeight) override {
-        // expire physics-glide
-        if (gliding && glideClock.getElapsedTime().asSeconds() >= maxGlideTime) {
+        if (gliding && glideClock.getElapsedTime().asSeconds() >= currentGlideTime) {
             gliding = false;
             glideExpired = true;
         }
 
         applyMovement(dt, level);
 
-        // gravity factor based on glide state
         float gFactor = 1.f;
         if (gliding)                       gFactor = glideGravityFactor;
         else if (velocityY > 0.f && !glideExpired)
@@ -123,7 +117,6 @@ public:
         velocityY = std::min(velocityY + gravity * gFactor * dt * 60.f,
             terminalVel);
 
-        // vertical collision & landing
         float newY = y + velocityY * dt * 60.f;
         bool hitL = level.collidesAt(x + 8, newY + spriteHeight),
             hitR = level.collidesAt(x + spriteWidth - 8, newY + spriteHeight);
@@ -135,7 +128,6 @@ public:
             y = blockY - spriteHeight;
             velocityY = 0;
 
-            // reset for next jump
             gliding = false;
             glideExpired = false;
             glideTimerStarted = false;
@@ -151,24 +143,24 @@ public:
             level.getWidth() * level.getCellSize());
     }
 
-    // ─── When following leader ───────────────────────────────────
+    void extendFlightTime(float seconds) {
+        currentGlideTime += seconds;
+        std::cout << "Tails' flight time extended by " << seconds << " seconds! New glide time: " << currentGlideTime << " seconds." << std::endl;
+    }
+
     void followTarget(float tx, float ty, float vX, float dt, Level& level) override {
         PlayerCharacter::followTarget(tx, ty, vX, dt, level);
         pickAndAdvanceAnimation(dt);
     }
 
-    // ─── Draw the active sprite ─────────────────────────────────
     void render(sf::RenderWindow& window) override {
         if (current) window.draw(current->getSprite());
     }
 
-    // ─── Expose glide state to Game.cpp ─────────────────────────
     bool isGliding() const { return gliding; }
-    // In Tails.h, under public:
     bool isGlidePhaseActive() const { return glidePhaseActive; }
 
 private:
-    // ─── animation selection & advance ──────────────────────────
     void pickAndAdvanceAnimation(float dt) {
         float vx = getVelocityX();
         bool onG = isOnGround();
@@ -201,19 +193,18 @@ private:
         sprite.setPosition(pos);
     }
 
-    // ─── glide state flags & timers ─────────────────────────────
     bool      gliding = false;
     bool      glideExpired = false;
     bool      glideTimerStarted = false;
     bool      glidePhaseActive = false;
     sf::Clock glideClock;
 
+    float currentGlideTime = maxGlideTime; // Dynamic glide time
     static constexpr float maxGlideTime = 7.f;
     static constexpr float glideGravityFactor = 0.3f;
     static constexpr float postGlideGravityFactor = 0.2f;
     static constexpr float glideInitialVelY = -8.f;
 
-    // ─── all animations ─────────────────────────────────────────
     Animation animIdleR, animRunR, animJumpR, animGlideR;
     Animation animIdleL, animRunL, animJumpL, animGlideL;
     Animation* current = nullptr;

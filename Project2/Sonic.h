@@ -8,8 +8,15 @@
 
 class Sonic : public PlayerCharacter {
 public:
-    Sonic(float sx, float sy)
-        : PlayerCharacter(sx, sy)
+    Sonic(float sx, float sy,
+        float gravity, float terminalVel,
+        float maxSpeed, float acceleration,
+        float deceleration)
+        : PlayerCharacter(gravity,
+            terminalVel,
+            maxSpeed,
+            acceleration,
+            deceleration)
     {
         constexpr int FW = 320, FH = 40;
         constexpr float FT = 0.08f;
@@ -77,7 +84,7 @@ public:
         if (current) window.draw(current->getSprite());
     }
 
-    void followTarget(float tx, float ty, float vX, float dt, Level& level) override {
+    void followTarget(float tx, float ty, float vX, float dt, Level& level) {
         PlayerCharacter::followTarget(tx, ty, vX, dt, level);
 
         float vx = vX;
@@ -85,15 +92,28 @@ public:
         sf::Vector2f pos = getPosition();
         Animation* next = nullptr;
 
-        if (!onG)           next = (vx >= 0 ? &animJumpR : &animJumpL);
-        else if (std::abs(vx) > 0.5f) next = (vx > 0 ? &animRunR : &animRunL);
-        else next = ((current == &animIdleL || current == &animRunL || current == &animJumpL)
-            ? &animIdleL : &animIdleR);
+        if (!onG) {
+            next = (vx >= 0 ? &animJumpR : &animJumpL);
+        }
+        else if (std::abs(vx) > 0.5f) {
+            next = (vx > 0 ? &animRunR : &animRunL);
+        }
+        else {
+            next = ((current == &animIdleL || current == &animRunL || current == &animJumpL)
+                ? &animIdleL : &animIdleR);
+        }
 
-        if (next != current) { current->stop(); current = next; current->reset(); }
-        current->play(); current->update(dt);
+        if (next != current) {
+            current->stop();
+            current = next;
+            current->reset();
+        }
+
+        current->play();
+        current->update(dt);
         current->getSprite().setPosition(pos.x, pos.y - 98.0f);
     }
+
 
     // ─── Force Hang Animation ───────────────────────────────────
     void forceHang(bool facingRight) {

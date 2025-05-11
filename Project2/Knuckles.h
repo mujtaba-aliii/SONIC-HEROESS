@@ -8,8 +8,15 @@
 
 class Knuckles : public PlayerCharacter {
 public:
-    Knuckles(float sx, float sy)
-        : PlayerCharacter(sx, sy)
+    Knuckles(float sx, float sy,
+        float gravity, float terminalVel,
+        float maxSpeed, float acceleration,
+        float deceleration)
+        : PlayerCharacter(gravity,
+            terminalVel,
+            maxSpeed,
+            acceleration,
+            deceleration)
     {
         // Adjust Y so Knuckles sits on the ground correctly
         float adjustedY = sy - 36.f;
@@ -155,8 +162,19 @@ public:
         current->getSprite().setPosition(pos.x, pos.y - 120.f);
     }
 
+    void activateInvincibility(float seconds) {
+        invincible = true; // Assuming `invincible` is a boolean flag
+        invincibilityClock.restart(); // Restart the clock to track invincibility duration
+        invincibilityDuration = seconds; // Set the duration
+        std::cout << "Knuckles is invincible for " << seconds << " seconds!" << std::endl;
+    }
+
+
 private:
     Animation animIdleR, animRunR, animJumpR, animHangR;
     Animation animIdleL, animRunL, animJumpL, animHangL;
     Animation* current = nullptr;
+	bool invincible = false; // Flag to indicate if Knuckles is invincible
+	sf::Clock invincibilityClock; // Clock to track invincibility duration
+	float invincibilityDuration = 0.f; // Duration of invincibility
 };

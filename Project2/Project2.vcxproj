@@ -155,6 +155,7 @@
     <ClInclude Include="Level.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MotoBug.h" />
+    <ClInclude Include="Obstacles.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Projectile.h" />

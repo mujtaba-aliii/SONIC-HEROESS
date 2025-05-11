@@ -3,20 +3,21 @@
 
 class Menu {
 public:
-    void run() const; // Method to show the menu
+    void run() const; // Method to show the main menu
+    void levelSelection() const; // Method to show the level selection screen
 protected:
     int selectedItemIndex = 0;
     bool isUpPressed = false;
     bool isDownPressed = false;
     sf::Clock inputClock;
     sf::Event event;
-    sf::Text menu[4];
-    std::string options[4] = { "Start level1", "Start level2", "Start level3", "Exit" };
+    sf::Text menu[5]; // Updated to support 5 options in the level selection screen
+    std::string mainOptions[5] = { "NEW GAME", "SELECT LEVEL", "OPTIONS", "CONTINUE", "LEADERBOARD" };
+    std::string levelOptions[5] = { "Level 1", "Level 2", "Level 3", "Level 4", "Exit" };
     sf::Sprite backgroundSprite;
     sf::Texture backgroundTexture;
     sf::Font font;
 
     bool MenuActive = true;
-
-
 };
+

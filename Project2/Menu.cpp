@@ -4,11 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include <cstdlib>
 #include <ctime>
-#include"Game.h"
+#include "Game.h"
 using namespace std;
-
-void start_level2(sf::RenderWindow& window) {}
-void start_level3(sf::RenderWindow& window) {}
 
 void Menu::run() const {
     srand(static_cast<unsigned>(time(0)));
@@ -29,11 +26,11 @@ void Menu::run() const {
     sf::Sprite backgroundSprite;
     backgroundSprite.setTexture(backgroundTexture);
 
-    sf::Text menu[4];
-    std::string options[4] = { "NEW GAME", "OPTIONS", "CONTINUE", "LEADERBOARD" };
-    for (int i = 0; i < 4; ++i) {
+    sf::Text menu[5];
+    std::string mainOptions[5] = { "NEW GAME", "SELECT LEVEL", "OPTIONS", "CONTINUE", "LEADERBOARD" };
+    for (int i = 0; i < 5; ++i) {
         menu[i].setFont(font);
-        menu[i].setString(options[i]);
+        menu[i].setString(mainOptions[i]);
         menu[i].setCharacterSize(40);
         menu[i].setFillColor(sf::Color::White);
         menu[i].setPosition(180, 330 + (i - 3) * 70); // Adjust as needed
@@ -44,6 +41,105 @@ void Menu::run() const {
     bool isDownPressed = false;
     sf::Clock inputClock;
 
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        if (inputClock.getElapsedTime().asMilliseconds() > 200) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !isUpPressed) {
+                selectedItemIndex = (selectedItemIndex - 1 + 5) % 5;
+                isUpPressed = true;
+                inputClock.restart();
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isDownPressed) {
+                selectedItemIndex = (selectedItemIndex + 1) % 5;
+                isDownPressed = true;
+                inputClock.restart();
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+                if (selectedItemIndex == 0) { // NEW GAME
+                    Game game(1600, 900, 1);
+                    game.run();
+                }
+                else if (selectedItemIndex == 1) { // SELECT LEVEL
+                    levelSelection();
+                }
+                else if (selectedItemIndex == 2) { // OPTIONS
+                    Button optionsButton(100, 500, "Menu");
+                    optionsButton.run(window);
+                }
+                else if (selectedItemIndex == 3) { // CONTINUE
+                    // Placeholder for continue functionality
+                }
+                else if (selectedItemIndex == 4) { // LEADERBOARD
+                    window.close();
+                }
+            }
+        }
+
+        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            isUpPressed = false;
+        }
+        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            isDownPressed = false;
+        }
+
+        for (int i = 0; i < 5; ++i) {
+            if (i == selectedItemIndex) {
+                menu[i].setFillColor(sf::Color::Red);
+                menu[i].setCharacterSize(50);
+            }
+            else {
+                menu[i].setFillColor(sf::Color::White);
+                menu[i].setCharacterSize(40);
+            }
+        }
+
+        window.clear();
+        window.draw(backgroundSprite);
+
+        for (int i = 0; i < 5; ++i) {
+            window.draw(menu[i]);
+        }
+
+        window.display();
+    }
+}
+
+void Menu::levelSelection() const {
+    sf::RenderWindow window(sf::VideoMode(1080, 600), "Select Level");
+
+    sf::Font font;
+    if (!font.loadFromFile("Data/font.ttf")) {
+        return;
+    }
+
+    sf::Texture backgroundTexture;
+    if (!backgroundTexture.loadFromFile("Data/background.jpg")) {
+        cout << "failed!!!" << endl;
+    }
+
+    sf::Sprite backgroundSprite;
+    backgroundSprite.setTexture(backgroundTexture);
+
+    sf::Text menu[5];
+    std::string levelOptions[5] = { "Level 1", "Level 2", "Level 3", "Level 4"};
+    for (int i = 0; i < 4; ++i) {
+        menu[i].setFont(font);
+        menu[i].setString(levelOptions[i]);
+        menu[i].setCharacterSize(40);
+        menu[i].setFillColor(sf::Color::White);
+        menu[i].setPosition(180, 330 + (i - 3) * 70); // Adjust as needed
+    }
+
+    int selectedItemIndex = 0;
+    bool isUpPressed = false;
+    bool isDownPressed = false;
+    sf::Clock inputClock;
 
     while (window.isOpen()) {
         sf::Event event;
@@ -54,30 +150,32 @@ void Menu::run() const {
 
         if (inputClock.getElapsedTime().asMilliseconds() > 200) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !isUpPressed) {
-                selectedItemIndex = (selectedItemIndex - 1 + 4) % 4;
+                selectedItemIndex = (selectedItemIndex - 1 + 5) % 5;
                 isUpPressed = true;
                 inputClock.restart();
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !isDownPressed) {
-                selectedItemIndex = (selectedItemIndex + 1) % 4;
+                selectedItemIndex = (selectedItemIndex + 1) % 5;
                 isDownPressed = true;
                 inputClock.restart();
             }
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-                if (selectedItemIndex == 0) {
-                    Game game(1600, 900);
+                if (selectedItemIndex == 0) { // Level 1
+                    Game game(1600, 900,1);
                     game.run();
                 }
-                else if (selectedItemIndex == 1) {
-                    Button optionsButton(100, 500, "Menu");
-                    optionsButton.run(window);
+                else if (selectedItemIndex == 1) { // Level 2
+                    Game game(1600, 900, 2);
+                    game.run();
                 }
-                else if (selectedItemIndex == 2) {
-                    start_level3(window);
+                else if (selectedItemIndex == 2) { // Level 3
+                    Game game(1600, 900, 3);
+                    game.run();
                 }
-                else if (selectedItemIndex == 3) {
-                    window.close();
+                else if (selectedItemIndex == 3) { // Level 4
+                    Game game(1600, 900, 4);
+                    game.run();
                 }
             }
         }
@@ -103,7 +201,7 @@ void Menu::run() const {
         window.clear();
         window.draw(backgroundSprite);
 
-        for (int i = 0; i < 4; ++i) {
+        for (int i = 0; i < 5; ++i) {
             window.draw(menu[i]);
         }
 
